@@ -12,14 +12,4 @@ instagram_unliker_plan_webapp.md
 
 frontend/src
 frontend/public
-backend/browser
-backend/controllers
-backend/core
-backend/routes
-backend/services
-backend/socket
 
-backend/app.js
-backend/server.js
-backend/ws
-backend/instagram
