@@ -11,6 +11,7 @@ async function launchBrowser() {
       '--disable-blink-features=AutomationControlled',
       '--no-sandbox',
       '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
       '--disable-infobars',
       '--window-position=0,0',
       '--ignore-certifcate-errors',
