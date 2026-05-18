@@ -21,11 +21,12 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-COPY package*.json ./
+
+COPY backend/package*.json ./
 RUN npm install
 RUN npx playwright install chromium
 
-COPY . .
+COPY backend/ .
 
 EXPOSE 3001
 CMD ["node", "server.js"]
