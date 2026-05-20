@@ -1,0 +1,233 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 968px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.badge {
+  align-self: flex-start;
+  background: rgba(225, 48, 108, 0.15);
+  border: 1px solid rgba(225, 48, 108, 0.3);
+  color: #ff6097;
+  padding: 0.35rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 968px) {
+  .badge {
+    align-self: center;
+  }
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  background-color: #ff6097;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.title {
+  font-size: 3.75rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.titleHighlight {
+  background: linear-gradient(135deg, #833AB4, #E1306C, #F56040);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 540px;
+}
+
+@media (max-width: 968px) {
+  .subtitle {
+    margin: 0 auto;
+  }
+}
+
+.heroActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 968px) {
+  .heroActions {
+    justify-content: center;
+  }
+}
+
+.primaryBtn {
+  background: linear-gradient(135deg, var(--instagram-purple), var(--instagram-pink), var(--instagram-orange));
+  border: none;
+  color: white;
+  padding: 0.85rem 2rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(225, 48, 108, 0.3);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(225, 48, 108, 0.5);
+}
+
+.secondaryBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  color: var(--text-light);
+  padding: 0.85rem 2rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.simulator {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--border-light);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.simHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 1.25rem;
+}
+
+.simTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.simStats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.simStatVal {
+  color: #ff6097;
+  font-weight: 700;
+}
+
+.simGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.simPost {
+  aspect-ratio: 1;
+  background: #1e293b;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+
+.simPostUnliked {
+  transform: scale(0.95);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.heartOverlay {
+  position: absolute;
+  font-size: 1.75rem;
+  color: #ff3040;
+  filter: drop-shadow(0 4px 8px rgba(255, 48, 64, 0.4));
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.heartOverlayUnliked {
+  color: rgba(255, 255, 255, 0.15);
+  filter: none;
+  transform: scale(0.8);
+}
+
+.heartOverlayUnliking {
+  animation: heartExplode 0.6s ease forwards;
+}
+
+@keyframes heartExplode {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); color: #fff; opacity: 0.8; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+.simBanner {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background: rgba(225, 48, 108, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(225, 48, 108, 0.3);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  animation: slideUp 0.5s ease-out;
+}
